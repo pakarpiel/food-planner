@@ -1,0 +1,117 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Leniwe",
+      "category": "Obiad"
+    },
+    {
+      "id": 2,
+      "name": "Placuszki z cukini",
+      "category": "Obiad"
+    },
+    {
+      "id": 3,
+      "name": "Makaron z łososiem",
+      "category": "Obiad"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipeId": 1,
+      "name": "twaróg",
+      "amount": 250,
+      "unit": "g"
+    },
+    {
+      "recipeId": 1,
+      "name": "jajko",
+      "amount": 1,
+      "unit": "szt."
+    },
+    {
+      "recipeId": 1,
+      "name": "masło",
+      "amount": 2,
+      "unit": "łyżka"
+    },
+    {
+      "recipeId": 1,
+      "name": "cukier",
+      "amount": 2,
+      "unit": "łyżka"
+    },
+    {
+      "recipeId": 1,
+      "name": "bułka tarta",
+      "amount": 3,
+      "unit": "łyżka"
+    },
+    {
+      "recipeId": 2,
+      "name": "cukinia",
+      "amount": 2,
+      "unit": "szt."
+    },
+    {
+      "recipeId": 2,
+      "name": "mąka",
+      "amount": 80,
+      "unit": "g"
+    },
+    {
+      "recipeId": 2,
+      "name": "jajko",
+      "amount": 1,
+      "unit": "szt."
+    },
+    {
+      "recipeId": 2,
+      "name": "jogurt naturalny",
+      "amount": 1,
+      "unit": "szt."
+    },
+    {
+      "recipeId": 3,
+      "name": "makaron tagliatelle",
+      "amount": 200,
+      "unit": "g"
+    },
+    {
+      "recipeId": 3,
+      "name": "łosoś wędzony",
+      "amount": 200,
+      "unit": "g"
+    },
+    {
+      "recipeId": 3,
+      "name": "szpinak",
+      "amount": 2,
+      "unit": "garść"
+    },
+    {
+      "recipeId": 3,
+      "name": "śmietanka kremówka",
+      "amount": 100,
+      "unit": "ml"
+    },
+    {
+      "recipeId": 3,
+      "name": "czosnek",
+      "amount": 1,
+      "unit": "ząbek"
+    },
+    {
+      "recipeId": 3,
+      "name": "cytryna",
+      "amount": 0.5,
+      "unit": "szt."
+    },
+    {
+      "recipeId": 3,
+      "name": "oliwa z oliwek",
+      "amount": 2,
+      "unit": "łyżka"
+    }
+  ]
+}

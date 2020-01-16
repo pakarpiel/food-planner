@@ -1,0 +1,8 @@
+<div>
+    <h3 class="text-center mt-4 mb-3"><small>{{recipe.name}}</small></h3>
+    <div class="card mb-3" *ngFor="let ingredient of recipe.ingredients">
+        <div class="card-body">
+            <p class="cart-text"><b>{{ingredient.name}}</b> - {{ingredient.amount}} x {{ingredient.unit}}</p>   
+        </div>
+    </div>
+</div>
