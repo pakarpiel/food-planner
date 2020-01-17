@@ -1,5 +1,13 @@
 export interface Recipe {
-  id: string;
+  id: number;
   name: string;
   category: string;
+}
+
+export interface Ingredient {
+  recipeId: number;
+  id: number;
+  name: string;
+  amount: number;
+  unit: string;
 }

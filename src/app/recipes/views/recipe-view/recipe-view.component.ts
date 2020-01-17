@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Recipe } from '../../Recipe';
+import { Recipe, Ingredient } from '../../Recipe';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -29,5 +29,13 @@ export class RecipeViewComponent implements OnInit {
         }
       })
       .subscribe(recipe => (this.recipe = recipe));
+  }
+
+  deleteIngredient(ingredient: Ingredient){
+    this.http
+      .delete(`${this.url}ingredients/${ingredient.id}`)
+      .subscribe(resp => {
+        this.fetchRecipe();
+      });
   }
 }
