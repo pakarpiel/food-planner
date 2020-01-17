@@ -19,96 +19,112 @@
   "ingredients": [
     {
       "recipeId": 1,
+      "id": 1,
       "name": "twaróg",
       "amount": 250,
       "unit": "g"
     },
     {
       "recipeId": 1,
+      "id": 2,
       "name": "jajko",
       "amount": 1,
       "unit": "szt."
     },
     {
       "recipeId": 1,
+      "id": 3,
       "name": "masło",
       "amount": 2,
       "unit": "łyżka"
     },
     {
       "recipeId": 1,
+      "id": 4,
       "name": "cukier",
       "amount": 2,
       "unit": "łyżka"
     },
     {
       "recipeId": 1,
+      "id": 5,
       "name": "bułka tarta",
       "amount": 3,
       "unit": "łyżka"
     },
     {
       "recipeId": 2,
+      "id": 6,
       "name": "cukinia",
       "amount": 2,
       "unit": "szt."
     },
     {
       "recipeId": 2,
+      "id": 7,
       "name": "mąka",
       "amount": 80,
       "unit": "g"
     },
     {
       "recipeId": 2,
+      "id": 8,
       "name": "jajko",
       "amount": 1,
       "unit": "szt."
     },
     {
       "recipeId": 2,
+      "id": 9,
       "name": "jogurt naturalny",
       "amount": 1,
       "unit": "szt."
     },
     {
       "recipeId": 3,
+      "id": 10,
       "name": "makaron tagliatelle",
       "amount": 200,
       "unit": "g"
     },
     {
       "recipeId": 3,
+      "id": 11,
       "name": "łosoś wędzony",
       "amount": 200,
       "unit": "g"
     },
     {
       "recipeId": 3,
+      "id": 12,
       "name": "szpinak",
       "amount": 2,
       "unit": "garść"
     },
     {
       "recipeId": 3,
+      "id": 13,
       "name": "śmietanka kremówka",
       "amount": 100,
       "unit": "ml"
     },
     {
       "recipeId": 3,
+      "id": 14,
       "name": "czosnek",
       "amount": 1,
       "unit": "ząbek"
     },
     {
       "recipeId": 3,
+      "id": 15,
       "name": "cytryna",
       "amount": 0.5,
       "unit": "szt."
     },
     {
       "recipeId": 3,
+      "id": 16,
       "name": "oliwa z oliwek",
       "amount": 2,
       "unit": "łyżka"
