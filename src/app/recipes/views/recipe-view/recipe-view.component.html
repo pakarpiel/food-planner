@@ -7,6 +7,8 @@
             [ingredient]="ingredient"
             (delete)="deleteIngredient(ingredient)">
         </app-recipe-ingredient>
+        <app-recipe-ingredient-editor class="list-group-item" (saveIngredient)="saveIngredient($event)">
+        </app-recipe-ingredient-editor>
      </div>
      <div class="col"></div>
 </div>

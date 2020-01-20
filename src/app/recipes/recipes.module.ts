@@ -6,10 +6,11 @@ import { RecipesViewComponent } from './views/recipes-view/recipes-view.componen
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeViewComponent } from './views/recipe-view/recipe-view.component';
 import { RecipeIngredientComponent } from './components/recipe-ingredient/recipe-ingredient.component';
+import { RecipeIngredientEditorComponent } from './components/recipe-ingredient-editor/recipe-ingredient-editor.component';
 
 
 @NgModule({
-  declarations: [RecipesViewComponent, RecipeViewComponent, RecipeIngredientComponent],
+  declarations: [RecipesViewComponent, RecipeViewComponent, RecipeIngredientComponent, RecipeIngredientEditorComponent],
   imports: [
     CommonModule,
     RecipesRoutingModule,

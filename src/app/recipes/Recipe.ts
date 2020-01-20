@@ -8,6 +8,6 @@ export interface Ingredient {
   recipeId: number;
   id: number;
   name: string;
-  amount: number;
+  amount: string;
   unit: string;
 }
