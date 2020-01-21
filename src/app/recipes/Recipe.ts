@@ -4,10 +4,14 @@ export interface Recipe {
   category: string;
 }
 
+export interface RecipeWithIngridients extends Recipe {
+  ingredients: Ingredient[];
+}
+
 export interface Ingredient {
   recipeId: number;
   id: number;
   name: string;
-  amount: string;
+  amount: number;
   unit: string;
 }

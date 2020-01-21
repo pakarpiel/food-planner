@@ -1,17 +1,27 @@
 <div class="row mt-1">
-    <div class="col">
-        <h3 class="text-center mt-4 mb-3"><small>Twoje przepisy:</small></h3>
+  <div class="col">
+    <h3 class="text-center mt-4 mb-3"><small>Twoje przepisy:</small></h3>
 
-        <div>
-            <div class="card mb-3" *ngFor="let recipe of recipes">
-                <a [routerLink]="['/recipes', recipe.id]">
-                    <div class="card-body">
-                        <h6 class="card-title">
-                            {{recipe.name}}</h6>
-                    </div>
-                </a>
-            </div>
-        </div>
+    <div>
+      <div class="card mb-3" *ngFor="let recipe of recipes">
+        <a [routerLink]="['/recipes', recipe.id]">
+          <div class="card-body">
+            <h6 class="card-title">
+              {{ recipe.name }}
+            </h6>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="col"></div>
+  </div>
+  <div class="col">
+    <button (click)="makeShoppingList()">Lista zakupów</button>
+
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let item of shoppingList | keyvalue">
+        <h5>{{ item.value.ingredient.name }}</h5>
+        <p>{{ item.value.amount }} x {{ item.value.ingredient.unit }}</p>
+      </div>
+    </div>
+  </div>
 </div>
