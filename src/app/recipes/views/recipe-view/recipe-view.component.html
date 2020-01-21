@@ -1,14 +1,22 @@
 <div class="row mt-1">
-    <div class="col">
-         <h4 class="text-center mt-4 mb-3">{{recipe.name}}</h4>
-        <app-recipe-ingredient
-            class="list-group-item" 
-            *ngFor="let ingredient of recipe.ingredients"
-            [ingredient]="ingredient"
-            (delete)="deleteIngredient(ingredient)">
-        </app-recipe-ingredient>
-        <app-recipe-ingredient-editor class="list-group-item" (saveIngredient)="saveIngredient($event)">
-        </app-recipe-ingredient-editor>
-     </div>
-     <div class="col"></div>
+  <div class="col" *ngIf="recipe">
+    <h4 class="text-center mt-4 mb-3">{{ recipe.name }}</h4>
+
+    <app-recipe-ingredient
+      class="list-group-item"
+      *ngFor="let ingredient of recipe.ingredients"
+      [ingredient]="ingredient"
+      (delete)="deleteIngredient(ingredient)"
+    >
+    </app-recipe-ingredient>
+    
+    <app-recipe-ingredient-editor
+      class="list-group-item"
+      (saveIngredient)="saveIngredient($event)"
+    >
+    </app-recipe-ingredient-editor>
+  </div>
+  <div class="col"  *ngIf="!recipe">
+      <p>Please wait loading...</p>
+  </div>
 </div>
