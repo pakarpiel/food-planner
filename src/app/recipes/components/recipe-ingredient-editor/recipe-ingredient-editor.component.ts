@@ -19,7 +19,6 @@ export class RecipeIngredientEditorComponent implements OnInit {
   saveIngredient = new EventEmitter();
 
   send() {
-    debugger
     this.saveIngredient.emit(this.ingredient);
     this.ingredient = {
       recipeId: null,

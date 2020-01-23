@@ -16,7 +16,6 @@ export class RecipeViewComponent implements OnInit {
   constructor(public http: HttpClient, public route:ActivatedRoute) { }
 
   saveIngredient(ingredient: Ingredient) {
-    debugger
     ingredient.recipeId = this.recipe.id;
     this.http.post(`${this.url}ingredients/`, ingredient)
     .subscribe(resp => {

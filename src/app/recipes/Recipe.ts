@@ -4,6 +4,10 @@ export interface Recipe {
   category: string;
 }
 
+export interface RecipeWithIngredients extends Recipe {
+  ingredients: Ingredient[];
+}
+
 export interface Ingredient {
   recipeId: number;
   id: number;
