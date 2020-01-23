@@ -13,8 +13,15 @@ export class RecipeIngredientComponent implements OnInit {
   @Output()
   delete = new EventEmitter();
 
+  @Output()
+  editIngredient = new EventEmitter();
+
   close() {
     this.delete.emit();
+  }
+
+  edit() {
+    this.editIngredient.emit();
   }
 
   constructor() { }

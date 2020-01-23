@@ -5,13 +5,19 @@
             class="list-group-item" 
             *ngFor="let ingredient of recipe.ingredients"
             [ingredient]="ingredient"
+            (editIngredient)="editIngredient(ingredient)"
             (delete)="deleteIngredient(ingredient)">
         </app-recipe-ingredient>
         <app-recipe-ingredient-editor class="list-group-item" (saveIngredient)="saveIngredient($event)">
         </app-recipe-ingredient-editor>
-     </div>
+    </div>
      <div class="col" *ngIf="!recipe">
          <p>Trwa ładowanie...</p>
      </div>
-     <div class="col"></div>
+    <div class="col" *ngIf="recipe">
+        <div *ngIf="mode==='edit'">
+            <app-recipe-ingredient-editor class="list-group-item" [editedIngredient]="selected" (saveIngredient)="saveIngredient($event)">
+            </app-recipe-ingredient-editor>
+        </div>
+    </div>
 </div>

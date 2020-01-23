@@ -1,4 +1,7 @@
 <div>
-    <span class="close" (click)="close()">&times;</span>
+    <div class="float-md-right">
+        <button class="btn btn-outline-secondary mr-3" (click)="edit()">Edytuj</button>
+        <span class="close" (click)="close()">&times;</span>
+    </div>
     <p class="cart-text"><b>{{ingredient.name}}</b> - {{ingredient.amount}} x {{ingredient.unit}}</p>
 </div>

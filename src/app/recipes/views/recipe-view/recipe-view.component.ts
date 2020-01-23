@@ -12,15 +12,31 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipeViewComponent implements OnInit {
   recipe: Recipe;
   url = "http://localhost:3000/";
+  mode = null;
+  selected = null;
 
   constructor(public http: HttpClient, public route:ActivatedRoute) { }
 
   saveIngredient(ingredient: Ingredient) {
     ingredient.recipeId = this.recipe.id;
-    this.http.post(`${this.url}ingredients/`, ingredient)
-    .subscribe(resp => {
-      this.fetchRecipe();
-    });
+    if (this.mode != "edit") {
+      this.http.post(`${this.url}ingredients/`, ingredient)
+      .subscribe(resp => {
+       this.fetchRecipe();
+      });
+    } else {
+      this.http.patch<Ingredient>(`${this.url}ingredients/${ingredient.id}`, ingredient)
+      .subscribe(resp => {
+        this.fetchRecipe();
+      });
+      this.mode = null;
+    }     
+  }
+
+  editIngredient(ingredient: Ingredient) {
+    this.mode = "edit";
+    this.selected = Object.assign({}, ingredient);
+    window.scrollTo(0,0);
   }
 
   ngOnInit() {

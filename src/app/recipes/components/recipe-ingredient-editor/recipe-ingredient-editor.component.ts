@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Ingredient } from '../../Recipe';
 
 @Component({
@@ -15,6 +15,9 @@ export class RecipeIngredientEditorComponent implements OnInit {
     unit: ""
   };
 
+  @Input()
+  editedIngredient;
+
   @Output()
   saveIngredient = new EventEmitter();
 
@@ -29,21 +32,12 @@ export class RecipeIngredientEditorComponent implements OnInit {
     }
   }
 
-  nameInput(text: string) {
-    this.ingredient.name = text;
-  }
-
-  amountInput(text: string) {
-    this.ingredient.amount = text;
-  }
-
-  unitInput(text: string) {
-    this.ingredient.unit = text;
-  }
-
   constructor() { }
 
   ngOnInit() {
+    if (this.editedIngredient) {
+      this.ingredient = this.editedIngredient;
+    }
   }
 
 }
