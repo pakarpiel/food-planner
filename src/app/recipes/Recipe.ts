@@ -1,7 +1,6 @@
 export interface Recipe {
   id: number;
   name: string;
-  category: string;
 }
 
 export interface RecipeWithIngredients extends Recipe {

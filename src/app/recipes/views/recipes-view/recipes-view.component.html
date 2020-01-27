@@ -12,6 +12,12 @@
                 </a>
             </div>
         </div>
+        <input type="button" value="Dodaj nowy przepis" class="btn btn-outline-success btn-block" (click)="addNewRecipe()">
     </div>
-    <div class="col"></div>
+    <div class="col">
+        <div *ngIf="mode==='new'" class="list-group-item">
+            <p>Dodaj nazwę nowego przepisu:</p>
+            <app-recipe-name-editor (saveRecipe)="saveRecipe($event)"></app-recipe-name-editor>
+        </div>
+    </div>
 </div>

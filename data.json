@@ -2,18 +2,15 @@
   "recipes": [
     {
       "id": 1,
-      "name": "Leniwe",
-      "category": "Obiad"
+      "name": "Leniwe"
     },
     {
       "id": 2,
-      "name": "Placuszki z cukini",
-      "category": "Obiad"
+      "name": "Placuszki z cukini"
     },
     {
       "id": 3,
-      "name": "Makaron z łososiem",
-      "category": "Obiad"
+      "name": "Makaron z łososiem"
     }
   ],
   "ingredients": [

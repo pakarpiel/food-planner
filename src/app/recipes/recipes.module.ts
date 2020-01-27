@@ -9,10 +9,11 @@ import { RecipeIngredientComponent } from './components/recipe-ingredient/recipe
 import { RecipeIngredientEditorComponent } from './components/recipe-ingredient-editor/recipe-ingredient-editor.component';
 
 import { FormsModule } from '@angular/forms';
+import { RecipeNameEditorComponent } from './components/recipe-name-editor/recipe-name-editor.component';
 
 
 @NgModule({
-  declarations: [RecipesViewComponent, RecipeViewComponent, RecipeIngredientComponent, RecipeIngredientEditorComponent],
+  declarations: [RecipesViewComponent, RecipeViewComponent, RecipeIngredientComponent, RecipeIngredientEditorComponent, RecipeNameEditorComponent],
   imports: [
     CommonModule,
     RecipesRoutingModule,
