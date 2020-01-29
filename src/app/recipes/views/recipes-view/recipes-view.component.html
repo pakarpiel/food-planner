@@ -21,7 +21,11 @@
         </div>
         <button class="btn btn-outline-secondary btn-block mb-5" (click)="makeShoppingList()">Generuj listę zakupów</button>
         <div class="list=group-item ml-3" *ngFor="let item of shoppingList | keyvalue">
-            <p><b>{{item.key}}</b> - {{item.value.amount}} x {{item.value.ingredient.unit}}</p>
+            <p class="d-inline"><b>{{item.key}}</b> - </p>
+            <div class="d-inline" *ngFor="let a of item.value.amount, let i=index">
+                <p class="d-inline" *ngIf="i===0">{{a}} x {{item.value.unit[i]}}</p>
+                <p class="d-inline" *ngIf="i!=0"> + {{a}} x {{item.value.unit[i]}}</p> 
+            </div>
         </div>
 
     </div>

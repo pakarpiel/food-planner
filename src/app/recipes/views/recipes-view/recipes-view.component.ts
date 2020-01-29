@@ -6,7 +6,8 @@ import { Recipe, RecipeWithIngredients, Ingredient } from '../../Recipe';
 type ShoppingListItems = {
   [k: string]: {
     ingredient: Ingredient;
-    amount: Ingredient["amount"];
+    amount: Array<number>;
+    unit: Array<string>;
   }
 }
 
@@ -56,10 +57,23 @@ export class RecipesViewComponent implements OnInit {
         recipes.forEach(recipe => {
           recipe.ingredients.forEach(ingredient => {
             const item = (this.shoppingList[ingredient.name] = this.shoppingList[ingredient.name] || {
-              amount: 0,
-              ingredient
+              ingredient,
+              amount: [0],
+              unit: [""]
             });
-            item.amount = (item.amount + ingredient.amount)
+            if(item.unit.includes(ingredient.unit)){
+              let index = item.unit.indexOf(ingredient.unit);
+              item.amount[index] = (item.amount[index] + ingredient.amount)
+            }else if(item.unit[0]===""){
+              item.amount[0] = ingredient.amount;
+              item.unit[0] = ingredient.unit;
+            }else{
+              item.amount.push(ingredient.amount);
+              item.unit.push(ingredient.unit);
+            }
+            
+            
+            
           });
         });
       });

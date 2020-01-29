@@ -11,7 +11,7 @@ export class RecipeIngredientEditorComponent implements OnInit {
     recipeId: null,
     id: null,
     name: "",
-    amount: "",
+    amount: 0,
     unit: ""
   };
 
@@ -27,7 +27,7 @@ export class RecipeIngredientEditorComponent implements OnInit {
       recipeId: null,
       id: null,
       name: "",
-      amount: "",
+      amount: 0,
       unit: ""
     }
   }
