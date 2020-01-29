@@ -11,6 +11,6 @@ export interface Ingredient {
   recipeId: number;
   id: number;
   name: string;
-  amount: string;
+  amount: number;
   unit: string;
 }

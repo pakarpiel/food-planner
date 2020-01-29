@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Recipe } from '../../Recipe';
+import { Recipe, RecipeWithIngredients, Ingredient } from '../../Recipe';
+
+type ShoppingListItems = {
+  [k: string]: {
+    ingredient: Ingredient;
+    amount: Ingredient["amount"];
+  }
+}
 
 @Component({
   selector: 'app-recipes-view',
@@ -21,9 +28,7 @@ export class RecipesViewComponent implements OnInit {
   }
 
   fetchRecipes() {
-    this.http
-    .get<Recipe[]>(this.url)
-    .subscribe(resp => (this.recipes = resp));
+    this.http.get<Recipe[]>(this.url).subscribe(resp => (this.recipes = resp));
   }
 
   addNewRecipe() {
@@ -36,6 +41,29 @@ export class RecipesViewComponent implements OnInit {
        this.router.navigate(['recipes', this.recipes.length+1])
       });
     this.mode = null;
+  }
+
+  shoppingList: ShoppingListItems = {};
+
+  makeShoppingList() {
+    this.http
+      .get<RecipeWithIngredients[]>(this.url, {
+        params: {
+          _embed: "ingredients"
+        }
+      })
+      .subscribe (recipes => {
+        recipes.forEach(recipe => {
+          recipe.ingredients.forEach(ingredient => {
+            const item = (this.shoppingList[ingredient.name] = this.shoppingList[ingredient.name] || {
+              amount: 0,
+              ingredient
+            });
+            item.amount = (item.amount + ingredient.amount)
+          });
+        });
+      });
+
   }
 
 }
