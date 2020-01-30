@@ -1,5 +1,5 @@
 <div class="row mt-1">
-    <div class="col" *ngIf="recipe">
+    <div class="col-12 col-md-6" *ngIf="recipe">
         <h4 class="text-center mt-4 mb-3">{{recipe.name}}</h4>
         <app-recipe-ingredient
             class="list-group-item" 
@@ -12,10 +12,10 @@
         <app-recipe-ingredient-editor class="list-group-item" (saveIngredient)="saveIngredient($event)">
         </app-recipe-ingredient-editor>
     </div>
-     <div class="col" *ngIf="!recipe">
+    <div class="col" *ngIf="!recipe">
          <p>Trwa ładowanie...</p>
-     </div>
-    <div class="col" *ngIf="recipe">
+    </div>
+    <div class="col-12 col-md-6" *ngIf="recipe">
         <div *ngIf="mode==='edit'">
             <p class="mt-4">Edytujesz składnik:</p>
             <app-recipe-ingredient-editor class="list-group-item" [editedIngredient]="selected" (saveIngredient)="saveIngredient($event)">

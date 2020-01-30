@@ -1,7 +1,7 @@
-<div>
-    <div class="float-md-right">
-        <button class="btn btn-outline-secondary mr-3" (click)="edit()">Edytuj</button>
-        <span class="close" (click)="close()">&times;</span>
+<div class="d-flex">
+    <p class="mr-auto"><b>{{ingredient.name}}</b> - {{ingredient.amount}} x {{ingredient.unit}}</p>
+    <div class="btn-group-sm d-flex">
+        <button class="btn btn-outline-secondary mr-1" (click)="edit()">Edytuj</button>
+        <button class="btn btn-outline-danger" (click)="close()">Usuń</button>    
     </div>
-    <p class="cart-text"><b>{{ingredient.name}}</b> - {{ingredient.amount}} x {{ingredient.unit}}</p>
 </div>
