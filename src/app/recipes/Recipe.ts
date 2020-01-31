@@ -1,6 +1,7 @@
 export interface Recipe {
   id: number;
   name: string;
+  onList: boolean;
 }
 
 export interface RecipeWithIngredients extends Recipe {

@@ -9,7 +9,8 @@ import { Recipe } from '../../Recipe';
 export class RecipeNameEditorComponent implements OnInit {
   recipe: Recipe = {
     id: null,
-    name: ""
+    name: "",
+    onList: false
   }
 
   @Output()

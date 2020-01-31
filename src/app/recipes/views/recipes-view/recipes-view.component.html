@@ -3,13 +3,17 @@
         <h3 class="text-center mt-4 mb-3"><small>Twoje przepisy:</small></h3>
 
         <div>
-            <div class="card mb-3" *ngFor="let recipe of recipes">
-                <a [routerLink]="['/recipes', recipe.id]">
-                    <div class="card-body">
+            <div class="card d-flex flex-row mb-3" *ngFor="let recipe of recipes">
+                <a class="flex-grow-1 mt-2 ml-2" [routerLink]="['/recipes', recipe.id]">
+                    <div>
                         <h6 class="card-title">
                             {{recipe.name}}</h6>
                     </div>
                 </a>
+                <div [ngSwitch]="recipe.onList">
+                    <button *ngSwitchCase="false" class="btn btn-secondary" (click)="toggleList(recipe, true)">Dodaj do listy</button>
+                    <button *ngSwitchCase="true" class="btn btn-success" (click)="toggleList(recipe, false)">Na liście!</button>
+                </div>
             </div>
         </div>
         <input type="button" value="Dodaj nowy przepis" class="btn btn-outline-success btn-block" (click)="addNewRecipe()">
@@ -19,9 +23,9 @@
             <p>Dodaj nazwę nowego przepisu:</p>
             <app-recipe-name-editor (saveRecipe)="saveRecipe($event)"></app-recipe-name-editor>
         </div>
-        <button class="btn btn-outline-secondary btn-block mb-5" (click)="makeShoppingList()">Generuj listę zakupów</button>
-        <div class="list=group-item ml-3" *ngFor="let item of shoppingList | keyvalue">
-            <p class="d-inline"><b>{{item.key}}</b> - </p>
+        <button class="btn btn-secondary btn-block mt-3 mb-5" (click)="makeShoppingList()">Generuj listę zakupów</button>
+        <div class="list=group-item ml-3" *ngFor="let i=index; let item of shoppingList | keyvalue">
+            <p class="d-inline">{{i+1}}. <b>{{item.key}}</b> - </p>
             <div class="d-inline" *ngFor="let a of item.value.amount, let i=index">
                 <p class="d-inline" *ngIf="i===0">{{a}} x {{item.value.unit[i]}}</p>
                 <p class="d-inline" *ngIf="i!=0"> + {{a}} x {{item.value.unit[i]}}</p> 

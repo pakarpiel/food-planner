@@ -46,7 +46,16 @@ export class RecipesViewComponent implements OnInit {
 
   shoppingList: ShoppingListItems = {};
 
+  toggleList(recipe: Recipe, option) {
+    recipe.onList = option;
+    this.http.patch<Recipe>(`${this.url}/${recipe.id}`, recipe)
+      .subscribe(resp => {
+        this.fetchRecipes();
+      });
+  }
+
   makeShoppingList() {
+    this.shoppingList = {};
     this.http
       .get<RecipeWithIngredients[]>(this.url, {
         params: {
@@ -55,29 +64,26 @@ export class RecipesViewComponent implements OnInit {
       })
       .subscribe (recipes => {
         recipes.forEach(recipe => {
-          recipe.ingredients.forEach(ingredient => {
-            const item = (this.shoppingList[ingredient.name] = this.shoppingList[ingredient.name] || {
-              ingredient,
-              amount: [0],
-              unit: [""]
+          if(recipe.onList){
+            recipe.ingredients.forEach(ingredient => {
+              const item = (this.shoppingList[ingredient.name] = this.shoppingList[ingredient.name] || {
+                ingredient,
+                amount: [0],
+                unit: [""]
+              });
+              if(item.unit.includes(ingredient.unit)){
+                let index = item.unit.indexOf(ingredient.unit);
+                item.amount[index] = (item.amount[index] + ingredient.amount)
+              }else if(item.unit[0]===""){
+                item.amount[0] = ingredient.amount;
+                item.unit[0] = ingredient.unit;
+              }else{
+                item.amount.push(ingredient.amount);
+                item.unit.push(ingredient.unit);
+              }  
             });
-            if(item.unit.includes(ingredient.unit)){
-              let index = item.unit.indexOf(ingredient.unit);
-              item.amount[index] = (item.amount[index] + ingredient.amount)
-            }else if(item.unit[0]===""){
-              item.amount[0] = ingredient.amount;
-              item.unit[0] = ingredient.unit;
-            }else{
-              item.amount.push(ingredient.amount);
-              item.unit.push(ingredient.unit);
-            }
-            
-            
-            
-          });
+          }  
         });
       });
-
   }
-
 }

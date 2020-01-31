@@ -2,15 +2,18 @@
   "recipes": [
     {
       "id": 1,
-      "name": "Leniwe"
+      "name": "Leniwe",
+      "onList": false
     },
     {
       "id": 2,
-      "name": "Placuszki z cukini"
+      "name": "Placuszki z cukini",
+      "onList": false
     },
     {
       "id": 3,
-      "name": "Makaron z łososiem"
+      "name": "Makaron z łososiem",
+      "onList": false
     }
   ],
   "ingredients": [
